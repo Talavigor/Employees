@@ -9,6 +9,7 @@ use App\Models\Senior;
 use App\Models\Manager;
 use App\Models\Customer;
 use Illuminate\Database\Eloquent\Collection;
+use App\Models\Employee;
 
 class EmployeeController extends Controller
 {
@@ -19,19 +20,22 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $juniors = Junior::all();
-        $middles = Middle::all();
-        $seniors = Senior::all();
-        $managers = Manager::all();
-        $customers = Customer::all();
+//        $juniors = Junior::all();
+//        $middles = Middle::all();
+//        $seniors = Senior::all();
+//        $managers = Manager::all();
+//        $customers = Customer::all();
+//
+//        return view('employees.employee', ['juniors' => $juniors,
+//                                                'middles' => $middles,
+//                                                'seniors' => $seniors,
+//                                                'managers' => $managers,
+//                                                'customers' => $customers,
+//
+//        ]);
+        $employees = Employee::all();
 
-        return view('employees.employee', ['juniors' => $juniors,
-                                                'middles' => $middles,
-                                                'seniors' => $seniors,
-                                                'managers' => $managers,
-                                                'customers' => $customers,
-
-        ]);
+        return view('employees.employee', ['employees' => $employees]);
 
     }
 

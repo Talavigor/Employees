@@ -5,21 +5,21 @@
             <h3>Employees</h3>
         </div>
 
-        @foreach($juniors as $junior)
-            @if($junior->salary == 15770)
-            <li>ФИО: {{ $junior->name}}</li>
-            <li>Должность: {{$junior->position}}</li>
-            <li>Принят на работу: {{$junior->employment_date}}</li>
-            <li>Зарплата: {{$junior->salary}}</li>
+        @foreach($employees as $employee)
+            @if($employee->position == 'junior')
+                <li>ФИО: {{ $employee->name}}</li>
+                <li>Должность: {{$employee->position}}</li>
+                <li>Принят на работу: {{$employee->employment_date}}</li>
+                <li>Зарплата: {{$employee->salary}}</li>
+
+            @elseif($employee->position == 'middle')
+                <li>ФИО: {{ $employee->name}}</li>
+                <li>Должность: {{$employee->position}}</li>
+                <li>Принят на работу: {{$employee->employment_date}}</li>
+                <li>Зарплата: {{$employee->salary}}</li>
             @endif
         @endforeach
-        @foreach($middles as $middle)
-            <li>ФИО: {{ $middle->name}}</li>
-            <li>Должность: {{$middle->position}}</li>
-            <li>Принят на работу: {{$middle->employment_date}}</li>
-            <li>Зарплата: {{$middle->salary}}</li>
-            <br>
-        @endforeach
+
 
     </div>
 @stop
