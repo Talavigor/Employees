@@ -5,20 +5,18 @@
             <h3>Employees</h3>
         </div>
 
-        @foreach($juniors as $junior)
-            @if($junior->salary == 15770)
-            <li>ФИО: {{ $junior->name}}</li>
-            <li>Должность: {{$junior->position}}</li>
-            <li>Принят на работу: {{$junior->employment_date}}</li>
-            <li>Зарплата: {{$junior->salary}}</li>
+        @foreach($tree as $employee)
+
+            <div class="col-sm-8 tree-{{$employee->position}}">
+                <li>ФИО: {{$employee->name}}</li>
+                <li>Должность: {{$employee->position}}</li>
+                <li>Принят на работу: {{$employee->employment_date}}</li>
+                <li>Зарплата: {{$employee->salary}}</li>
+                <br>
+            </div>
+            @if(isset($employee->childs))
+                @include('employees.count',['tree'=>$employee->childs])
             @endif
-        @endforeach
-        @foreach($middles as $middle)
-            <li>ФИО: {{ $middle->name}}</li>
-            <li>Должность: {{$middle->position}}</li>
-            <li>Принят на работу: {{$middle->employment_date}}</li>
-            <li>Зарплата: {{$middle->salary}}</li>
-            <br>
         @endforeach
 
     </div>
