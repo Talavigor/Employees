@@ -19,6 +19,7 @@ class SeniorsSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             Senior::create([
+                'middle_id' => $i+1,
                 'name' => $faker->name,
                 'position' => 'senior',
                 'employment_date' => $faker->date('Y-m-d','now'),

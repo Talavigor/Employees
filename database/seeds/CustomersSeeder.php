@@ -19,6 +19,7 @@ class CustomersSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             Customer::create([
+                'manager_id' => $i+1,
                 'name' => $faker->name,
                 'position' => 'customer',
                 'employment_date' => $faker->date('Y-m-d','now'),

@@ -15,6 +15,8 @@ class CreateSeniorsTable extends Migration
     {
         Schema::create('seniors', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('manager_id');
+            $table->foreign('manager_id')->references('id')->on('managers');
             $table->string('name');
             $table->string('position');
             $table->date('employment_date');

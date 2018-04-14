@@ -15,6 +15,8 @@ class CreateMiddlesTable extends Migration
     {
         Schema::create('middles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('senior_id');
+            $table->foreign('senior_id')->references('id')->on('seniors');
             $table->string('name');
             $table->string('position');
             $table->date('employment_date');

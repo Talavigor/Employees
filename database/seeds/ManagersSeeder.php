@@ -19,6 +19,7 @@ class ManagersSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             Manager::create([
+                'senior_id' => $i+1,
                 'name' => $faker->name,
                 'position' => 'manager',
                 'employment_date' => $faker->date('Y-m-d','now'),

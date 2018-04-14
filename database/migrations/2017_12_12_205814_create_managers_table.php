@@ -15,6 +15,8 @@ class CreateManagersTable extends Migration
     {
         Schema::create('managers', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->string('name');
             $table->string('position');
             $table->date('employment_date');

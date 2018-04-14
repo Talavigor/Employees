@@ -15,6 +15,8 @@ class CreateJuniorsTable extends Migration
     {
         Schema::create('juniors', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('middle_id');
+            $table->foreign('middle_id')->references('id')->on('middles');
             $table->string('name');
             $table->string('position');
             $table->date('employment_date');

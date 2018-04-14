@@ -19,6 +19,7 @@ class MiddlesSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             Middle::create([
+                'junior_id' => $i+1,
                 'name' => $faker->name,
                 'position' => 'middle',
                 'employment_date' => $faker->date('Y-m-d','now'),
